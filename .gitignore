@@ -1,5 +1,5 @@
 .DS_Store
-/venv
+**/venv
 **/.vscode
 **/__pycache__
 **/.ipynb_checkpoints
@@ -8,10 +8,16 @@
 *.ppt*
 *.pdf
 **/data
-**/test
+*/test
 *.zip
 *.tar*
 test.*
 temp.*
-**/report
+*.csv
+*.json
 *.png
+*.jpg
+
+
+
+
