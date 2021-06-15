@@ -12,3 +12,10 @@ cointegration
 
 trading
 - 交易模块，根据协整模型进行交易
+
+## 中间数据
+- preprocessed.csv 满足要求的35个品种
+- cumReturn.bin 累计收益率
+- SSDs.bin 按SSD排序的{}-{}配对
+- paris.bin 通过协整检验的剩余配对
+- models.bin [(SSDs id, model, result)]
