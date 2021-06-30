@@ -19,3 +19,12 @@ trading
 - SSDs.bin 按SSD排序的{}-{}配对
 - paris.bin 通过协整检验的剩余配对
 - models.bin [(SSDs id, model, result)]
+
+
+
+## 整理
+
+画图代码在notebook中
+
+新代码整理成py文件
+
