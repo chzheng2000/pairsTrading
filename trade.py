@@ -20,7 +20,7 @@ class Arbitrageur:
     基于形成期数据用于交易期策略模拟
     '''
     def __init__(self, y, x, model, dates, account=1e6, size=10, 
-                open_thsh=1.5, close_thsh=0.5, stop_thsh=3, cost_rate=0):
+                open_thsh=1.5, close_thsh=0.2, stop_thsh=2.5, cost_rate=0):
         '''
         @Description
         初始化
@@ -31,11 +31,11 @@ class Arbitrageur:
         model, 协整模型结果
         dates, 交易时间序列
         account, float default 1e6, 初始资金
-        size, int default 10, 合约最下交易单位
+        size, int default 1000, 单次交易单位
         open_thsh, float default 1.5, 开仓阈值
-        close_thsh, float default 0.5, 平仓阈值
-        stop_thsh, float default 3, 止损阈值
-        cost_rate, float default 0, 单边交易成本占数额比例
+        close_thsh, float default 0.2, 平仓阈值
+        stop_thsh, float default 2.5, 止损阈值
+        cost_rate, float default 0, 交易成本占数额比例
         ------------
         @Returns
         '''
@@ -141,7 +141,7 @@ class Arbitrageur:
         buy_y = -self.y_pos*self.y[i]
         buy_x = -self.x_pos*self.x[i]
         cost = (abs(buy_y)+abs(buy_x))*self.cost_rate
-        return_flag = account
+        return_flag = self.account
         self.account -= buy_y
         self.account -= buy_x
         self.account -= cost
